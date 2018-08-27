@@ -1,0 +1,149 @@
+﻿@model ReklamEvMVCProject.Models.PRODUCT
+
+@{
+    ViewBag.Title = "Əsas";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="slider">
+                <div class="row">
+                    <div id="grid-slider" class="flexslider">
+                        <ul class="slides">
+
+                            <li>
+                                <div class="col-sm-12 col-lg-12 omega">
+                                    <article class="bg-image entry-lg" data-image-src="/Content/img/qaqa.jpg">
+
+                                    </article>
+                                </div>
+                             
+                            </li>
+                            <li>
+                                <div class="col-sm-12 col-lg-12 omega">
+                                    <article class="bg-image entry-lg" data-image-src="/Content/img/21.jpg">
+                                       
+                                    </article>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="col-sm-12 col-lg-12 omega">
+                                    <article class="bg-image entry-lg" data-image-src="/Content/img/22.jpg"></article>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="col-sm-12 col-lg-12 omega">
+                                    <article class="bg-image entry-lg" data-image-src="/Content/img/dd.jpg"></article>
+                                </div>
+                            </li>
+
+                                  <li>
+                                <div class="col-sm-12 col-lg-12 omega">
+                                    <article class="bg-image entry-lg" data-image-src="/Content/img/cccc.jpg">
+                                       
+                                    </article>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /slider -->
+        </div><!-- /.col -9  -->
+
+    </div><!-- /.row -->
+</div><!-- /.container -->
+
+
+<section id="page" class="container">
+    <!--/.my modal -->
+    <!-- Button trigger modal -->
+    @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+    </button>*@
+    <div class="mTop-30">
+        <div class="row">
+            <div class="col-sm-12 clearfix">
+                <div class="hr-link">
+                    <hr class="mBtm-50" data-symbol="FEATURED DEALS">
+                    <div class="view-all">
+                        @*<a href="index.html">*@
+                        @Html.ActionLink("Ən son paylaşılanlar", "Products", "Home");
+                           
+                        @*</a>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in ViewBag.ProductListIndex)
+            {
+            <div class="col-sm-4">
+                <div class="deal-entry orange">
+                @if (item.SINGLE_PHOTO == null) {
+                    <div class="image">
+                        
+                            <img src="http://placehold.it/700x420" alt="#" class="img-responsive" style="width: 360px; height: 216px;">
+                      
+                    </div>
+                }
+                else
+                {
+                    <div class="image">
+                        
+                            <img src="@item.SINGLE_PHOTO" alt="#" class="img-responsive" style="width: 360px; height: 216px;">
+                        
+                    </div>
+                }
+                    <!-- /.image -->
+                    <div class="title">
+                       
+                            @item.NAME
+                      
+                    </div>
+                    <div class="entry-content" style="height: 147px; overflow-y: hidden;">
+                        <div class="prices clearfix">
+                            <div class="price">
+                                <b>
+                                    @item.PRICE
+                                </b>
+
+                                <b>
+                                    AZN
+                                </b>
+                            </div>
+                        </div>
+                        <p>
+                            @item.DESCRIPTION
+                        </p>
+                    </div>
+                    <!--/.entry content -->
+                    <footer class="info_bar clearfix">
+                        <ul class="unstyled list-inline row">
+                            <li class="info_link col-sm-5 col-xs-6 col-lg-4">
+                                @*<button class="btn btn-block btn-default btn-raised btn-sm show-product">
+                                    Məhsula bax
+                                </button>*@
+                                @*<button type="button" class="btn btn-block btn-default btn-raised btn-sm show-product" data-id="@item.ID">Məhsula bax</button>*@
+                                @*<a href="@Url.Action("ProductDetail", "Home")" class="btn btn-block btn-default btn-raised btn-sm">Məhsula bax</a>*@
+                                @Html.ActionLink("Məhsula bax", "ProductDetail", "Home", new { id = item.ID }, new { @class = "btn btn-block btn-default btn-raised btn-sm" })
+                            </li>
+                        </ul>
+                    </footer>
+                </div>
+            </div>
+            <!-- /.deal -->
+            }
+        </div>
+        <!--/.row -->
+    </div>
+    <!--/.frame -->
+    <!--/.frame -->
+
+</section>
+<!-- /#page ends -->

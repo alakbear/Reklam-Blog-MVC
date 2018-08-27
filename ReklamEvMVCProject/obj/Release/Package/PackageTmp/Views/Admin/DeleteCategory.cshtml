@@ -1,0 +1,45 @@
+﻿@model ReklamEvMVCProject.Models.CATEGORY
+
+@{
+    ViewBag.Title = "DeleteCategory";
+    Layout = "~/Views/Shared/AdminLayoutPage.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Kateqoriya əlavə et</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Məlumatı daxil et
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6 center-block">
+                        <form role="form">
+                            <div class="form-group">
+                                <label>Silinəcək kateqoriyanı seçin</label>
+                                @Html.DropDownListFor(model => model.ID, ViewBag.categorylistname as SelectList, "Kateqoriya seçin", new { @class = "form-control" })
+                            </div>
+
+                            <button type="submit" class="btn btn-danger">Sil</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+}
+
+

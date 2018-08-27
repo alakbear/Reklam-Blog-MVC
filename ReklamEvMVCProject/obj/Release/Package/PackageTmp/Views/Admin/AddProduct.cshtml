@@ -1,0 +1,75 @@
+﻿@model ReklamEvMVCProject.Models.PRODUCT
+ 
+@{
+    ViewBag.Title = "Məhsul əlavə et";
+    Layout = "~/Views/Shared/AdminLayoutPage.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Məhsulu əlavə et</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+@using (Html.BeginForm("AddProduct", "Admin", FormMethod.Post, new { enctype = "multipart/form-data"}))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    @ViewBag.PhotoMessage
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6 center-block">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label>Məhsulun adı</label>
+                                    @Html.EditorFor(model => model.NAME, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.NAME, "", new { @class = "text-danger" })
+                                    @*<input class="form-control">*@
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Məhsulun qiyməti</label>
+                                    @Html.EditorFor(model => model.PRICE, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.PRICE, "", new { @class = "text-danger" })
+                                    @*<input class="form-control">*@
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Məhsulun şəkli</label>
+                                    <input type="file" name="photofile" accept="image/*" class="form-control" multiple/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Məhsulun kateqoriyası</label>
+                                    @Html.DropDownListFor(model => model.CATEGORY_ID, ViewBag.categorylistname as SelectList, "Kateqoriya seçin", new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Məhsul haqqında</label>
+                                    @Html.EditorFor(model => model.DESCRIPTION, new { htmlAttributes = new { @class = "form-control"} })
+                                    @*@Html.TextAreaFor(model => model.DESCRIPTION, new { htmlAttributes = new { @class = "form-control", @rows = "5" } })*@
+
+
+                                    @Html.ValidationMessageFor(model => model.DESCRIPTION, "", new { @class = "text-danger" })
+                                    @*<textarea class="form-control" rows="3"></textarea>*@
+                                </div>
+
+                                  <button type="submit" class="btn btn-success">Əlavə et</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+

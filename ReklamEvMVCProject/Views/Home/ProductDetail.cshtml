@@ -1,0 +1,99 @@
+﻿@model ReklamEvMVCProject.Models.PRODUCT
+
+@{
+    ViewBag.Title = "ProductDetail";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+}
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="@Model.SINGLE_PHOTO" class="img-responsive pictureClick" style="width: 1200px; height: 550px;" />
+            </div>
+            @*<div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>*@
+        </div>
+    </div>
+</div>
+
+
+<section id="page" class="container">
+    <div class="mTop-30">
+        <div class="row">
+            <h3 style="text-align:center;">Məhsul haqqında ətraflı məlumatlar</h3>
+            <div class="col-sm-12 clearfix">
+                <div class="hr-link">
+                    <hr class="mBtm-50" data-symbol="FEATURED DEALS">
+                    <div class="view-all">
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <b> Məhsulun şəkli: </b> 
+                    <br />
+                    @if (Model.SINGLE_PHOTO == null)
+                    {
+                        <br />
+                        <div>
+                            Bu məhsula aid heçbir şəkil tapılmadı.
+                        </div>
+
+                    }
+                    else if (Model.SINGLE_PHOTO != null)
+                    {
+                        <br />
+                        <a style="cursor: pointer;">
+                            <img src="@Model.SINGLE_PHOTO" class="img-responsive pictureClick" style="width: 500px; height: 300px;" />
+                        </a>
+                    }
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <b> Məhsulun adı: </b> @Model.NAME
+                </div>
+                <br />
+                <br />
+                <div>
+                    <b> Məhsulun qiyməti: </b> @Model.PRICE AZN
+                </div>
+                <br />
+                <br />
+                <div>
+                    <b> Məhsulun detalları: </b> @Model.DESCRIPTION
+                </div>
+            </div>
+        </div>
+  
+
+        <div class="col-sm-12 clearfix">
+            <div class="hr-link">
+                <hr class="mBtm-50" data-symbol="FEATURED DEALS">
+                <div class="view-all">
+
+                </div>
+            </div>
+        </div>
+        <!--/.row -->
+    </div>
+    <!--/.frame -->
+    <!--/.frame -->
+
+</section>
+

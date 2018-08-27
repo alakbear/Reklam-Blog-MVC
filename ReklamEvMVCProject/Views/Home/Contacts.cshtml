@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "Əlaqə";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+}
+
+<section id="page" class="container mBtm-50">
+    <div class="row">
+        <div class="col-sm-8 mTop-30">
+            <div class="inner-wrap frameLR bg-white shadow clearfix ">
+                <hr data-symbol="OUR LOCATION">
+                <div class="google-maps">
+                    @*<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d180923.20573680187!2d18.431035300000026!3d44.88417339999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475c3ce74d1a2ad7%3A0xec92baaa82e344b0!2zR3JhZGHEjWFj!5e0!3m2!1sen!2sba!4v1430647606971" width="600" height="450" frameborder="0" style="border:0"></iframe>*@
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d759.5243604124792!2d49.813185129211135!3d40.4066920987104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4030879bee1d3c97%3A0xacbc667b06f34ccc!2sBa%C5%9Fkent+Restoran+%26+%C5%9Eirniyyat!5e0!3m2!1sen!2s!4v1520461219080" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <hr data-symbol="CONTACT FORM">
+                <!-- widget -->
+                <div class="widget contact-widget">
+                    <form class="contact-form clearfix" action="#" method="post" novalidate="novalidate">
+                        <p>
+                            Lazım olan sahələr * işarəsi ilə göstərilib.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <p class="input-block">
+                                    <label class="required">
+                                        Adınız
+                                        <span>
+                                            (*)
+                                        </span>
+                                    </label>
+                                    <input type="text" class="form-control" placeholder="Adınız">
+                                </p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <p class="input-block">
+                                    <label class="required">
+                                        Email
+                                        <span>
+                                            (*)
+                                        </span>
+                                    </label>
+                                    <input type="text" class="form-control" placeholder="Email">
+                                </p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <p class="input-block">
+                                    <label class="required">
+                                        Vebsayt
+                                    </label>
+                                    <input type="text" class="form-control" placeholder="Vebsayt">
+                                </p>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <p class="textarea-block">
+                            <label class="required" for="contact_message">
+                                Sizin mesajınız
+                                <span>
+                                    (*)
+                                </span>
+                            </label>
+                            <textarea rows="6" cols="88" id="contact_message" name="message" class="form-control"></textarea>
+                        </p>
+                        <p class="contact-button clearfix">
+                            <input type="submit" class="btn btn-raised ripple-effect btn-danger btn-lg" id="submit-contact" value="Göndər">
+                        </p>
+                    </form>
+                    <div id="response">
+                    </div>
+                </div>
+                <!-- punica-contact-widget -->
+            </div>
+            <!-- /inner wrap -->
+        </div>
+        <div class="col-sm-4 sidebar">
+            <div class="inner-side shadow mTop-0">
+                <div class="widget widget-subscribe">
+                    <hr data-symbol="SUBSCRIBE">
+                    <div class="newsletter">
+                        <h4>
+                            Yeniliklərə abunə olun
+                            <span class="color-orange">
+
+                            </span>
+                        </h4>
+                        <p>
+                            Yeniliklərə abunə olun ki, yeni məhsullardan və endirimlərdən xəbərdar olun.
+                        </p>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Email">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger btn-raised ripple-effect" type="button">
+                                    Abunə ol
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /widget -->
+                <div class="widget">
+                    <hr class="mBtm-50 mTop-30" data-symbol="ADDRESS">
+                    <address>
+                        <b>Bakı ofisi</b>
+                        <br />
+                        Nəsimi rayonu, 3cü mikrorayon
+                        <br>
+                        Cavadxan küçəsi, 3005 ci məhəllə
+                        <br>
+                    </address>
+                </div>
+                <div class="widget">
+                    <hr class="mBtm-50 mTop-30" data-symbol="ADDRESS II">
+                    <address>
+                        ReklamEv şirkəti İstanbul ofisi
+                        <br>
+                        Şişli
+                        <br>
+                        Mecidiyye köy
+                        <br>
+                    </address>
+                </div>
+            </div>
+        </div>
+        <!-- /col 4 - sidebar -->
+    </div>
+</section>
+<!-- /#page end -->
+

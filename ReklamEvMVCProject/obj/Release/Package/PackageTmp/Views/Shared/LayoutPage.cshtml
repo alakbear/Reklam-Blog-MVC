@@ -1,0 +1,251 @@
+﻿@model ReklamEvMVCProject.Models.PRODUCT
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="generator" content="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/themify-icons.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Scripts/owl.carousel/assets/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/css/animsition.css" rel="stylesheet" />
+    <link href="~/Content/css/plugins.min.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="site-wrapper animsition" data-animsition-in="fade-in" data-animsition-out="fade-out">
+        <header>
+            @*<div class="top-bar bg-light hdden-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 list-inline list-unstyled no-margin hidden-xs">
+                            <p class="no-margin">
+                                Hər hansı bir sualınız var?
+                                <strong>
+                                    +994 55 214 06 83
+                                </strong>
+                            </p>
+                        </div>
+                        <div class="pull-right col-sm-6">
+                            <ul class="list-inline list-unstyled pull-right">
+                                <li class="active">
+                                    <a href="https://www.instagram.com/reklamev.az/" target="_blank">
+                                        <i class="fa fa-instagram" style="font-size: 20px;">
+                                        </i> Instagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+            <div id="nav-wrap">
+                <div class="nav-wrap-holder">
+                    <div class="container" id="nav_wrapper">
+                        <nav class="navbar navbar-static-top nav-white" id="main_navbar" role="navigation">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+                                    <span class="sr-only">
+                                        Toggle navigation
+                                    </span>
+                                    <span class="icon-bar">
+                                    </span>
+                                    <span class="icon-bar">
+                                    </span>
+                                    <span class="icon-bar">
+                                    </span>
+                                </button>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="Navbar">
+                                <!-- regular link -->
+                                <a href="@Url.Action("Index", "Home")"><img src="~/Content/img/myLogoReklamEv.png" style="margin-top:10px;" /></a>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="dropdown">
+                                            <a href="@Url.Action("Index", "Home")"><i class="ti-home"></i>Əsas</a>
+                                            @*<a href='@Url.Action("Index", "Home")' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">*@
+                                            @*@Html.ActionLink("Esas", "Index", "Home", new { @class = "dropdown-toggle" })
+                        <i class="ti-home">
+                        </i>
+                    </a>*@
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="@Url.Action("AboutUs", "Home")"><i class="ti-clipboard"></i>Haqqımızda</a>
+                                            @*<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <i class=" ti-clipboard">
+                    </i> Haqqımızda*@
+                                            @*<span class="caret">
+                        </span>
+                    </a*@
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Products", "Home")"><i class="ti-list-ol"></i>Məhsullar</a>
+                                            @*<a href="results.html">
+                        <i class=" ti-list-ol">
+                        </i> Məhsullar
+                    </a>*@
+                                        </li>
+                                        @*<li>
+                    <a href="@Url.Action("Services", "Home")"><i class="ti-settings"></i>Xidmətlər</a>
+                    <a href="sumbit.html">
+                        <i class="ti-settings">
+                        </i> Xidmətlər
+                    </a>
+                </li>*@
+                                        <li>
+                                            <a href="@Url.Action("Contacts", "Home")"><i class="ti-email"></i>Əlaqə</a>
+                                            @*<a href="contact.html">
+                        <i class="ti-email">
+                        </i> Əlaqə
+                    </a>*@
+                                        </li>
+                                    </ul>
+                                    <div>
+                                        @*<img src="~/Content/img/logo.jpg" />*@
+                                    </div>
+</div>
+                        </nav>
+                    </div>
+                </div>
+                <!-- /.div nav wrap holder -->
+            </div>
+            <!-- /#nav wrap -->
+        </header>
+
+            @RenderBody()
+
+        <footer id="footer">
+            <div class="container">
+                <div class="col-sm-4">
+                    @*<img src=~/Content/img/logo-dark.png alt="#" class="img-responsive logo">*@
+                    @*<img src="~/Content/img/myLogoReklamEv.png" class="img-responsive logo"/>*@
+                    <a href="@Url.Action("Index", "Home")"><img src="~/Content/img/myLogoReklamEv.png" style="margin-top:10px;" /></a>
+                    <p>
+                        ReklamEv şirkəti ən son dizayn, təşkilatçılıq və reklam xidmətləri ilə artıq sizin xidmətinizdədir.
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-2">
+                    <h5>
+                        KATEQORİYALAR
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            Buketlər
+                        </li>
+                        <li>
+                            Gəlin buketləri
+                        </li>
+                        <li>
+                            Səbətlər
+                        </li>
+                        <li>
+                            Qutu kompozisiyalar
+                        </li>
+                        <li>
+                            Kompozosiyalar
+                        </li>
+                        <li>
+                            Ədədli buketlər
+                        </li>
+                        <li>
+                            Bütün kateqoriyalar ..
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>
+                        SOSIAL ŞƏBƏKƏ
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="https://www.instagram.com/reklamev.az/" target="_blank">
+                                    <i class="fa fa-instagram" style="font-size: 20px; color: chartreuse;">
+                                    Instagram
+                                    </i> 
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="fa fa-facebook-square" style="font-size: 20px; color: cornflowerblue;">
+                                    Facebook
+                                </i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btmFooter">
+                <div class="container">
+                    <div class="col-sm-7">
+                        <p>
+                            <strong>
+                                &copy; 2018
+                            </strong> Bütün müəllif hüquqları qorunur.
+                            <i class="ti-heart">
+                            </i>
+                            <strong>
+                                by Alakbear
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- /animitsion -->
+    <!-- JS files -->
+    <script src="~/Scripts/js/jquery.min.js"></script>
+    <script src="~/Scripts/js/kupon.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <script src="~/Scripts/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/jquery.animsition.min.js"></script>
+    <script src="~/Scripts/owl.carousel/owl.carousel.js"></script>
+    <script src="~/Scripts/js/jquery.flexslider-min.js"></script>
+    <script src="~/Scripts/js/plugins.js"></script>
+    <script>
+        $('.pictureClick').click(function (ev) {
+            $('#exampleModalCenter').modal('show');
+        })
+
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel();
+        });
+
+        $(document).ready(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                animationSpeed: 400,
+                slideshowSpeed: 4500,
+                pauseOnAction: true,
+                pauseOnHover: true
+            });
+        });
+        //$(".show-product").click(function () {
+        //    var id = $(this).attr("data-id");
+
+        //    if (id != null) {
+        //        $.ajax({
+        //            type: "POST",
+        //            url: "/Home/ProductDetail/",
+        //            data: JSON.stringify({ id: id }),
+        //            contentType: "application/json; charset=utf-8",
+        //            dataType: "json",
+        //        })
+        //    }
+        //})
+    </script>
+</body>
+</html>

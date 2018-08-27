@@ -1,0 +1,79 @@
+﻿@model ReklamEvMVCProject.Models.ViewCATEGORY
+
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/AdminLayoutPage.cshtml";
+}
+
+@*@{ 
+    ReklamEvMVCProject.Models.CATEGORY catSuccessMsg = (ReklamEvMVCProject.Models.CATEGORY)ViewData["catSuccessMsg"];
+}*@
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Kateqoriya əlavə et</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+@using (@Html.BeginForm("AddAction", "Admin", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <div class="pull-left">
+                    
+                </div> 
+
+                @if (Model != null && Session["categoryModel"] != null)
+                {
+                    if ((int)Session["categoryModel"] == 1)
+                    {
+                    <div class="pull-right">
+                        <div class="alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            Kateqoriya uğurla əlavə olundu.
+                        </div>
+                    </div> 
+                    }
+                    else if ((int)Session["categoryModel"] == 0)
+                    {
+                    <div class="pull-right">
+                        <div class="alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            Xəta baş verdi.
+                        </div>
+                    </div>
+                    }
+                    Session["categoryModel"] = null;
+                }
+
+                @Html.Hidden("IsSuccessfull", 0)
+                @{Model.IsSuccessfull = 0;}
+                @Html.HiddenFor(m => m.IsSuccessfull,0)
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6 center-block">
+                        <form role="form">
+                            <div class="form-group">
+                                <label>Kateqoriya adı</label>
+                                @Html.EditorFor(model => model.NAME, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.NAME, "", new { @class = "text-danger" })
+                                @*<input class="form-control">*@
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Əlavə et</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+}
+
